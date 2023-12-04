@@ -1,0 +1,25 @@
+type Book {
+    id: ID!
+    author: String!
+    title: String!
+    description: String
+    year: Int
+    genre: String
+    rating: Int
+    numPages: Int
+    format: String
+}
+
+type Query {
+    booksFetch(author: String, title: String): [Book]
+    bookFindById(id: ID): Book
+}
+
+type Mutation {
+    bookCreateOne(author: String!, title: String!, description: String, year: Int, genre: String, rating: Int, numPages: Int, format: String): Book
+
+    deleteBookById(id: ID): Book
+
+    bookFindByIdAndUpdate(id: ID, author: String!, title: String!, description: String, year: Int, genre: String, rating: Int, numPages: Int, format: String): Book
+}
+
